@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin CBT Panel</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container admin-container">
+  <h1>Admin Panel</h1>
+
+  <!-- Form Tambah Soal -->
+  <section class="card">
+    <h2>Tambah Soal Baru</h2>
+    <form method="POST" action="/admin/add-soal" class="form-admin">
+      <input type="text" name="q" placeholder="Pertanyaan" required>
+      <input type="text" name="options" placeholder="Option1,Option2,Option3,Option4" required>
+      <input type="text" name="answer" placeholder="Jawaban Benar" required>
+      <button type="submit" class="btn">Tambah Soal</button>
+    </form>
+  </section>
+
+  <!-- Daftar Soal -->
+  <section class="card">
+    <h2>Daftar Soal</h2>
+    <table class="table-admin">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Pertanyaan</th>
+          <th>Options</th>
+          <th>Jawaban</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% (soal || []).forEach((s, idx) => { %>
+          <tr>
+            <td><%= idx+1 %></td>
+            <td><%= s.q %></td>
+            <td><%= s.options.join(', ') %></td>
+            <td><%= s.answer %></td>
+            <td>
+              <form method="POST" action="/admin/delete-soal" style="display:inline;">
+                <input type="hidden" name="index" value="<%= idx %>">
+                <button type="submit" class="btn-delete">Hapus</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Skor Murid -->
+  <section class="card">
+    <h2>Skor Murid</h2>
+    <table class="table-admin">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% (results || []).forEach(r => { %>
+          <tr>
+            <td><%= r.user %></td>
+            <td><%= r.score %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </section>
+
+  <a href="/login" class="btn btn-logout">Logout</a>
+</div>
+</body>
+</ht

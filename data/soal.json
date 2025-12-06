@@ -1,0 +1,41 @@
+[
+  {
+    "q": "Soal 1: Apa warna langit?",
+    "options": [
+      "Biru",
+      "Hijau",
+      "Merah",
+      "Kuning"
+    ],
+    "answer": "Biru"
+  },
+  {
+    "q": "Soal 2: 2 + 2 = ?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "q": "Soal 3: Ibu kota Indonesia?",
+    "options": [
+      "Jakarta",
+      "Bandung",
+      "Surabaya",
+      "Medan"
+    ],
+    "answer": "Jakarta"
+  },
+  {
+    "q": "Soal 4: Siapa Presiden pertama indonesia?",
+    "options": [
+      "Soekarno",
+      "Hatta",
+      "Agusrin"
+    ],
+    "answer": "Soekarno"
+  }
+]

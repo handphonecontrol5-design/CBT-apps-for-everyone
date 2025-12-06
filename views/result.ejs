@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CBT Result</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container card">
+  <h1>Hasil CBT - <%= user %></h1>
+  <p>Total Nilai: <%= score %> / <%= total %></p>
+
+  <h2>Semua Skor Murid</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% allResults.forEach(r => { %>
+        <tr>
+          <td><%= r.user %></td>
+          <td><%= r.score %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  <a href="/login" class="btn btn-logout">Logout</a>
+</div>
+</body>
+</html>

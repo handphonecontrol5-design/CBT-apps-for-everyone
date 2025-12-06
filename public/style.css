@@ -1,0 +1,179 @@
+/* === GENERAL BODY & CONTAINER === */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #6a11cb, #1c1c1c);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* === CARD === */
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* === HEADINGS === */
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* === BUTTONS === */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff6a00;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ff8c42;
+}
+
+.btn-logout {
+    display: block;
+    width: 150px;
+    text-align: center;
+    margin: 20px auto;
+    background: #333;
+}
+
+.btn-logout:hover {
+    background: #555;
+}
+
+/* === FORMS === */
+input, select {
+    display: block;
+    width: 95%;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+}
+
+form.form-admin input,
+form.form-cbt input {
+    width: 95%;
+}
+
+form.form-cbt .btn {
+    width: 50%;
+    margin: 20px auto;
+}
+
+/* === TABLES === */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+th {
+    background: rgba(0,0,0,0.2);
+}
+
+tr:nth-child(even) {
+    background: rgba(255,255,255,0.05);
+}
+
+/* Delete button */
+.btn-delete {
+    padding: 5px 10px;
+    background: #ff3b3b;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-delete:hover {
+    background: #ff6161;
+}
+
+/* === CBT SPECIFIC === */
+.cbt-question {
+    margin-bottom: 20px;
+}
+
+.cbt-options label {
+    display: block;
+    margin: 8px 0;
+    padding: 8px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.1);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.cbt-options input[type="radio"] {
+    margin-right: 10px;
+}
+
+.cbt-options label:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.timer {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    height: 20px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.progress-bar-inner {
+    height: 100%;
+    width: 0%;
+    background: #ff6a00;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* === LOGIN / INDEX PAGE === */
+.login-card, .index-card {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 30px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.login-card h1, .index-card h1 {
+    margin-bottom: 25px;
+}
+
+.login-card input, .login-card .btn {
+    width: 100%;
+}

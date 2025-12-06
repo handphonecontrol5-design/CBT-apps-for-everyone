@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CBT Page</title>
+<link rel="stylesheet" href="/style.css">
+<script>
+  window.onload = () => {
+      const questions = document.querySelectorAll('.cbt-question');
+      let current = 0;
+
+      // Hide all questions except first
+      questions.forEach((q, idx) => { if(idx>0) q.style.display='none'; });
+
+      // Progress bar update function
+      const progress = document.querySelector('.progress-bar-inner');
+      const updateProgress = () => {
+          progress.style.width = ((current+1)/questions.length*100)+'%';
+      };
+      updateProgress();
+
+      // Next button functionality
+      document.querySelectorAll('.next-btn').forEach((btn, idx) => {
+          btn.addEventListener('click', e => {
+              e.preventDefault();
+              if(current < questions.length-1){
+                  questions[current].style.display='none';
+                  current++;
+                  questions[current].style.display='block';
+                  updateProgress();
+              }
+          });
+      });
+  }
+</script>
+</head>
+<body>
+<div class="container card">
+  <h1>CBT - <%= user %></h1>
+  <div class="progress-bar"><div class="progress-bar-inner"></div></div>
+
+  <form method="POST" action="/cbt-submit?user=<%= user %>">
+    <% (soal || []).forEach((s, idx) => { %>
+      <div class="cbt-question">
+        <h3>Soal <%= idx+1 %>: <%= s.q %></h3>
+        <div class="cbt-options">
+          <% (s.options || []).forEach(opt => { %>
+            <label>
+              <input type="radio" name="q<%= idx %>" value="<%= opt %>" required> <%= opt %>
+            </label>
+          <% }) %>
+        </div>
+        <% if(idx < soal.length-1){ %>
+          <button class="btn next-btn">Next</button>
+        <% } %>
+      </div>
+    <% }) %>
+    <button type="submit" class="btn" style="display:block; margin:20px auto;">Selesai</button>
+  </form>
+</div>
+</body>
+</html>
